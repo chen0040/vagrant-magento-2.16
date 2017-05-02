@@ -1,3 +1,6 @@
+.idea/
+*.iml
+
 .htaccess.sample
 .modgit/
 .modman/

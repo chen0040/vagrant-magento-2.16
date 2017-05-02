@@ -46,7 +46,6 @@ Vagrant.configure(2) do |config|
   # provisioning magento installation
   config.vm.provision "shell", inline: "sudo rm -Rf /var/www/html"
   config.vm.provision "shell", inline: "sudo ln -s #{vagrantConfig['synced_folder']['guest_path']} /var/www/html"
-  config.vm.provision "shell", inline: "sudo rm -f /var/www/html/index.html"
   config.vm.provision "shell", inline: "curl -sS https://getcomposer.org/installer | php"
   config.vm.provision "shell", inline: "mv composer.phar /usr/local/bin/composer"
   config.vm.provision "shell", inline: "composer clearcache"

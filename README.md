@@ -43,6 +43,18 @@ vagrant up
 ```
 
 * Add the line "192.168.10.10 magento.box" to /etc/hosts on your host computer (If you host computer is Windows, then the hosts file is located at C:\Windows\System32\drivers\etc\hosts)
-* Open your browser and enter "http://magento.box"
+* Open your browser and enter "http://magento.box" (To change this to your url of choice, replace it in the Vagrantfile.config.yml)
+* To login to the vagrant vm box, run the command "vagrant ssh". If you are using putty, ssh to 192.168.10.10 (username: vagrant, password: vagrant)
 
+# Issues and Solutions
+
+If you encounter some of the issues when running Vagrantfile, you can refer to the following:
+
+* Issue: Vagrant was unable to mount VirtualBox shared folders. This is usually because the filesystem "vboxsf" is not available. This filesystem is made available via the VirtualBox Guest Additions and kernel module.
+
+Solution: Run the following command:
+          
+```bash
+vagrant plugin install vagrant-vbguest
+```
 

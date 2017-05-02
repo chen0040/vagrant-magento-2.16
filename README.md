@@ -3,6 +3,8 @@
 
 Vagrantfile for latest magento (2.16) and latest Ubuntu (bento/ubuntu-14.04)
 
+![Magento & Vagrant](https://cookieflow.files.wordpress.com/2013/07/magento_vagrant.jpg?w=525&h=225)
+
 This is the Vagrantfile and Vagrantfile.config.yml adapted from the "Magento Developer Guide" book but updated based on the trial-and-errors with the latest magento, ubuntu and PHP
 
 The objective is to address several issues with the original Vagrantfile provided by "Magento Developer Guide" so that it is compatible with the latest magento (current version 2.16) and Ubuntu (current version: Ubuntu 14.04.5 LTS)

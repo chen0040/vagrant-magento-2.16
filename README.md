@@ -45,6 +45,7 @@ vagrant up
 * Add the line "192.168.10.10 magento.box" to /etc/hosts on your host computer (If you host computer is Windows, then the hosts file is located at C:\Windows\System32\drivers\etc\hosts)
 * Open your browser and enter "http://magento.box" (To change this to your url of choice, replace it in the Vagrantfile.config.yml)
 * To login to the vagrant vm box, run the command "vagrant ssh". If you are using putty, ssh to 192.168.10.10 (username: vagrant, password: vagrant)
+* Once you are in the vagrant magento vm box, you can for example install the sample data for magento (Follow this [link](http://devdocs.magento.com/guides/v2.1/install-gde/install/sample-data-before-composer.html))
 
 # Issues and Solutions
 

@@ -13,7 +13,8 @@ Some known issues with the original Vagrantfile provided by "Magento Developer G
 
 * The vm.box "ubuntu/vivid64" for vagrant is not longer provided
 * The default PHP version (7.1) provided by latest ubuntu (after running apt-get update on bento/ubuntu-14.04) is not compatible with magento 2.16 due to the issues with mcrypt no longer supported in PHP 7.1
-* php5.6-mbstring and php5.6-zip are needed for the magento 2.16 to work correctly 
+* php5.6-mbstring and php5.6-zip are needed for the magento 2.16 to work correctly
+* the mount option of "dmode=775, fmode=664" for synced_folder in the original Vagrantfile does not seem to work on win 10 host with latest Vagrant and virtualbox 
 
 # Version
 

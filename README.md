@@ -53,9 +53,19 @@ If you encounter some of the issues when running Vagrantfile, you can refer to t
 
 * Issue: Vagrant was unable to mount VirtualBox shared folders. This is usually because the filesystem "vboxsf" is not available. This filesystem is made available via the VirtualBox Guest Additions and kernel module.
 
-Solution: Run the following command:
+Solution: Run the following command to instlal vagrant-vbguest plugin which can auto-update the vbguest in the vm to match the host:
           
 ```bash
 vagrant plugin install vagrant-vbguest
 ```
+
+If vagrant-vbguest plugin fails to work, an alternative is to copy the VBGuestAddition.iso from VirtualBox installation folder (It is C:\Program Files\Oracle\VirtualBox for win 10)
+
+Add in these lines into Vagrantfile:
+
+<pre>
+config.vbguest.iso_path = "VBoxGuestAdditions.iso"
+config.vbguest.auto_update = false
+config.vbguest.no_remote = true
+</pre>
 

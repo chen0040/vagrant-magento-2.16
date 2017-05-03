@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: vagrantConfig['ip']
 
   # Mount local "~/git/magento-dev/" path into box's "/magento-dev/" path
-  config.vm.synced_folder vagrantConfig['synced_folder']['host_path'], vagrantConfig['synced_folder']['guest_path'], owner:"vagrant", group: "www-data", mount_options:["dmode=775, fmode=664"]
+  config.vm.synced_folder vagrantConfig['synced_folder']['host_path'], vagrantConfig['synced_folder']['guest_path'], owner:"vagrant", group: "www-data"
 
   # VirtualBox specific settings
   config.vm.provider "virtualbox" do |vb|
@@ -45,6 +45,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: "sudo service apache2 stop"
   # provisioning magento installation
   config.vm.provision "shell", inline: "sudo rm -Rf /var/www/html"
+  # note that the following line is for development only, for security in production env, u should not set permission to 777
+  config.vm.provision "shell", inline: "sudo chmod -R 777 #{vagrantConfig['synced_folder']['guest_path']}"
   config.vm.provision "shell", inline: "sudo ln -s #{vagrantConfig['synced_folder']['guest_path']} /var/www/html"
   config.vm.provision "shell", inline: "curl -sS https://getcomposer.org/installer | php"
   config.vm.provision "shell", inline: "mv composer.phar /usr/local/bin/composer"
@@ -58,5 +60,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: "sudo php /var/www/html/bin/magento cache:disable"
   config.vm.provision "shell", inline: "sudo php /var/www/html/bin/magento cache:flush"
   config.vm.provision "shell", inline: "sudo php /var/www/html/bin/magento setup:performance:generate-fixtures /var/www/html/setup/performance-toolkit/profiles/ce/small.xml"
+  # note that the following line is for development only, for security in production env, u should not set permission to 777
+  config.vm.provision "shell", inline: "sudo chmod -R 777 /var/www/html"
   config.vm.provision "shell", inline: "sudo service apache2 start"
 end

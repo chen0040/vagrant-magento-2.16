@@ -9,6 +9,8 @@ This is the Vagrantfile and Vagrantfile.config.yml adapted from the "Magento Dev
 
 The objective is to address several issues with the original Vagrantfile provided by "Magento Developer Guide" so that it is compatible with the latest magento (current version 2.16) and Ubuntu (current version: Ubuntu 14.04.5 LTS)
 
+Also provided is a magento cheat sheet that provides some commons pointers for pitfalls in deploying and configuring magento
+
 Some known issues with the original Vagrantfile provided by "Magento Developer Guide" are:
 
 * The vm.box "ubuntu/vivid64" for vagrant is not longer provided

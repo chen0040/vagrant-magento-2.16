@@ -13,3 +13,8 @@ php bin/magento setup:static-content:deploy
 ```
 
 
+The default magento admin path is at
+
+<pre>
+magent-site-host-url/admin
+</pre>

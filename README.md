@@ -7,6 +7,12 @@ Vagrantfile for latest magento (2.16) and latest Ubuntu (bento/ubuntu-14.04)
 
 This is the Vagrantfile and Vagrantfile.config.yml adapted from the "Magento Developer Guide" book but updated based on the trial-and-errors with the latest magento, ubuntu and PHP
 
+# Features
+
+* Vagrantfile for local development on magento
+* setup-magento-production.sh is a shell script that will install everything to setup magento in a ubuntu VM for production environment
+* megento-cheat-sheet for providing some tips that might be useful during the development process
+
 The objective is to address several issues with the original Vagrantfile provided by "Magento Developer Guide" so that it is compatible with the latest magento (current version 2.16) and Ubuntu (current version: Ubuntu 14.04.5 LTS)
 
 Also provided is a magento cheat sheet that provides some commons pointers for pitfalls in deploying and configuring magento
@@ -29,7 +35,7 @@ The following list the version of the various softwares installed by the Vagrant
 
 Currently the Vagrantfile is tested to be working on host computer which is Windows 10
 
-# Usage
+# Usage (Development)
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -49,6 +55,10 @@ vagrant up
 * Open your browser and enter "http://magento.box" (To change this to your url of choice, replace it in the Vagrantfile.config.yml)
 * To login to the vagrant vm box, run the command "vagrant ssh". If you are using putty, ssh to 192.168.10.10 (username: vagrant, password: vagrant)
 * Once you are in the vagrant magento vm box, you can for example install the sample data for magento (Follow this [link](http://devdocs.magento.com/guides/v2.1/install-gde/install/sample-data-before-composer.html))
+
+# Usage (Production)
+
+The setup-magento-production.sh provides the basic setup of the magento in the production env. Note that this is a very basic setup, you will need to do your tuning. Also remember to replace anything with "[...]" in the shell script with the actual parameters of your production environment.
 
 # Issues and Solutions
 

@@ -39,14 +39,19 @@ Currently the Vagrantfile is tested to be working on host computer which is Wind
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
+* git clone and cd to the project:
+
+```bash
+git clone https://github.com/chen0040/vagrant-magento-2.16.git
+cd vagrant-magento-2.16
+```
+
 * Obtain the magento public and private secret keys (Follow this [link](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html)) and replace the "[magent_public_key]" and "[magento_private_key]" in Vagrantfile.config.yml with the obtained keys
 * Change the "email@change.me" in Vagrantfile.config.yml to your email of choice
 * Change the "[magento_host_path]" in Vagrantfile.config.yml to your local path on your host computer on which you want the magento files to be installed
 * Run the following command on your host computer:
 
 ```bash
-git clone https://github.com/chen0040/vagrant-magento-2.16.git
-cd vagrant-magento-2.16
 vagrant up
 ```
 

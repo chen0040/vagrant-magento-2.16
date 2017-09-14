@@ -1,0 +1,1 @@
+This folder is the guest path for the shared folder 
